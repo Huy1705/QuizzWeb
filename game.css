@@ -56,3 +56,16 @@
     margin-top: 0; /* Bỏ khoảng cách trên của <h1> */
     font-size: 2em; /* Tuỳ chỉnh kích thước nếu muốn */
 }
+#progressBar {
+    width: 100%;
+    height: 1rem;
+    background-color: #e0e0e0; /* Màu nền của thanh tiến trình */
+    border-radius: 0.5rem; /* Bo góc cho thanh tiến trình */
+    overflow: hidden; /* Đảm bảo phần tràn không hiển thị */
+}
+#progressBarFill {
+    width: 0; /* Bắt đầu với độ rộng 0 */
+    height: 100%;
+    background-color: #4CAF50; /* Màu nền của thanh tiến trình đã lấp đầy */
+    transition: width 0.3s ease-in-out; /* Hiệu ứng chuyển động khi cập nhật độ rộng */
+}

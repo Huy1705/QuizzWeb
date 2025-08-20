@@ -1,6 +1,7 @@
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
-const questionCountText = document.getElementById('hudquestion-value');
+const progressText = document.getElementById('ProgressText');
+const progressBarFill = document.getElementById('progressBarFill');
 console.log(choices);
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -54,7 +55,8 @@ getNewQuestion = () => {
         return window.location.assign('/end.html');
     }
     questionCounter++;
-    questionCountText.innerText = questionCounter+'/'+ MAX_QUESTIONS;
+    progressText.innerText = "Question: "+questionCounter+'/'+ MAX_QUESTIONS;
+    updateProgressBar() 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -86,8 +88,14 @@ function incrementScore(num) {
     score += num;
     const scoreText = document.getElementById('hudscore-value');
     if (scoreText) scoreText.innerText = score;
+    localStorage.setItem('finalScore', score);
+
 }
 function updateQuestionCount() {
     if (questionCountText) questionCountText.innerText = questionCounter+'/'+ MAX_QUESTIONS;
+}
+function updateProgressBar() {
+    const progressPercentage = (questionCounter / MAX_QUESTIONS) * 100;
+    progressBarFill.style.width = progressPercentage + '%';
 }
 startGame();

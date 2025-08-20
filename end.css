@@ -1,0 +1,33 @@
+#end{
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+.final-score {
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin: middle;
+}
+#end .btn {
+    display: block;
+    width: 100%;         /* hoặc 100% nếu muốn nút dài hơn */
+    margin: 10px auto;  /* căn giữa và tạo khoảng cách giữa các nút */
+}
+
+/*Form*/
+form{
+    flex-direction: column; /* Chia thành các hàng dọc */
+    gap: 1rem;              /* Khoảng cách giữa các nút */
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+#end input[type="text"] {
+    width: 80%;            /* Chiều rộng của ô nhập */
+    padding: 10px;        /* Khoảng cách bên trong */
+    border: 1px solid #ccc; /* Viền nhẹ */
+    border-radius: 5px;   /* Bo góc */
+    font-size: 1rem;      /* Kích thước chữ */
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congrat!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="end.css">
+</head>
+<body>
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h1>Chúc mừng bạn đã hoàn thành!</h1>
+            <h1 class="final-score">Điểm số của bạn: <span id="score-value">0</span></h1>
+            <form">
+                <input 
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Nhập tên"
+                >
+            </form>
+            <button id="save" class="btn">Save</button>
+            <button id="restart-button" class="btn">Play again</button>
+            <button id="Home"class="btn">Go home</button>
+        </div>
+    </div>
+    <script src="end.js"></script>
+</body>
+</html>
