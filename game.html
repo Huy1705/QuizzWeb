@@ -10,26 +10,38 @@
 <body>
     <div class="container">
         <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div id="huditem">
+                    <p>Câu hỏi: </p>
+                    <h1 id="hudquestion-value">0</h1>
+                </div>
+                <div id="huditem">
+                    <p>Điểm số: </p>
+                    <h1 id="hudscore-value">0</h1>
+                </div>
+            </div>
             <h2 id="question">
                 Câu hỏi của bạn sẽ xuất hiện ở đây
             </h2>
+            
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
-                <p class="choice-text">Choice 1</p>
+                <p class="choice-text" data-number="1">Choice 1</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">B</p>
-                <p class="choice-text">Choice 2</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">C</p>
-                <p class="choice-text">Choice 3</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">D</p>
-                <p class="choice-text">Choice 4</p>
+                <p class="choice-text"data-number="4">Choice 4</p>
             </div>
         </div>
     </div>
+    <script src="game.js"></script>
 </body>
 </html>
