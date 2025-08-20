@@ -1,0 +1,20 @@
+.choice-container {
+  display: flex;
+  margin-bottom: 0.5rem; /* Adds space between the choices and the next element */
+  align-items: center;
+  width: 150%; /* Ensures the container takes full width */
+  background-color: white;
+  font-size: 1.2rem; /* Sets the font size for the choices */
+  border: 0.1rem solid #000000; /* Adds a border around the choice */
+  border-radius: 0.5rem; /* Bo góc cho container */
+  overflow: hidden;      /* Đảm bảo prefix không bị lòi ra ngoài */
+}
+.choice-prefix{
+    padding: 1.5rem 2.5rem; /* Adds padding around the prefix */
+    background-color: #546acc; /* Đổi màu cho hài hòa hơn */
+    color: white;
+    border-right: 0.1rem solid #000000; /* Tạo viền ngăn cách với phần còn lại */
+    height: 100%; /* Đảm bảo chiều cao bằng container */
+    display: flex;
+    align-items: center;
+}
