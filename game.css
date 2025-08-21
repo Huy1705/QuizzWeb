@@ -2,7 +2,7 @@
   display: flex;
   margin-bottom: 0.5rem; /* Adds space between the choices and the next element */
   align-items: center;
-  width: 150%; /* Ensures the container takes full width */
+  width: 30rem; /* Ensures the container takes full width */
   height: 4rem; /* Sets a fixed height for the choice container */
   background-color: white;
   font-size: 1.2rem; /* Sets the font size for the choices */
@@ -27,7 +27,6 @@
 }
 .choice-text{
     padding: 1.5rem 2.5rem; /* Adds padding around the text */
-    flex-grow: 1; /* Cho phép phần text chiếm hết không gian còn lại */
     width: 100%; /* Đảm bảo phần text chiếm hết chiều rộng còn lại */
     color: black;
     font-weight: bold; /* Làm cho chữ đậm hơn */

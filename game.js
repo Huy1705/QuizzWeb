@@ -42,20 +42,46 @@ let questions=[
         answer: 3
     }
 ]
-const MAX_QUESTIONS = 4;
+fetch("https://opentdb.com/api.php?amount=10")
+    .then(res => {return res.json()})
+    .then(loadedQuestions => {
+        console.log(loadedQuestions);
+        if (loadedQuestions.response_code === 0) {
+            questions= loadedQuestions.results.map(loadedQuestion => {
+                const formattedQuestion = {
+                    question: loadedQuestion.question
+                };
+                const answerChoices = [...loadedQuestion.incorrect_answers];
+                formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+                answerChoices.splice(formattedQuestion.answer - 1, 0, loadedQuestion.correct_answer);
+                answerChoices.forEach((answer, index) => {
+                    formattedQuestion['choice' + (index + 1)] = answer;
+                });
+                return formattedQuestion;
+            }
+            )
+            console.log("API is working correctly");
+        } else {
+            console.error("API is not working correctly");
+        }
+        startGame();
+    });
+const MAX_QUESTIONS = 10;
 startGame = () => {
+    
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
 }
 getNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    const questionCountText =questions.length;
+    if (availableQuestions.length === 0 || questionCounter >= questionCountText) {
         localStorage.setItem('mostRecentScore', score);
         return window.location.assign('/end.html');
     }
     questionCounter++;
-    progressText.innerText = "Question: "+questionCounter+'/'+ MAX_QUESTIONS;
+    progressText.innerText = "Question: "+questionCounter+'/'+ questionCountText;
     updateProgressBar() 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -88,14 +114,14 @@ function incrementScore(num) {
     score += num;
     const scoreText = document.getElementById('hudscore-value');
     if (scoreText) scoreText.innerText = score;
-    localStorage.setItem('finalScore', score);
+    
 
 }
 function updateQuestionCount() {
     if (questionCountText) questionCountText.innerText = questionCounter+'/'+ MAX_QUESTIONS;
 }
 function updateProgressBar() {
-    const progressPercentage = (questionCounter / MAX_QUESTIONS) * 100;
+    const questionCountText =questions.length;
+    const progressPercentage = (questionCounter / questionCountText) * 100;
     progressBarFill.style.width = progressPercentage + '%';
 }
-startGame();

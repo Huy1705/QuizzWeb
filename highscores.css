@@ -1,0 +1,12 @@
+#highscores-list {
+    list-style-type: none;
+    padding: 0;
+}.highscore{
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+#highscores {
+    text-align: center;
+    margin-top: 50px;
+    background-color: white;
+}
