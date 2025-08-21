@@ -68,3 +68,16 @@
     background-color: #4CAF50; /* Màu nền của thanh tiến trình đã lấp đầy */
     transition: width 0.3s ease-in-out; /* Hiệu ứng chuyển động khi cập nhật độ rộng */
 }
+/* Loader styles */
+#loader {
+    border: 1.6rem solid #f3f3f3; /* Màu nền của loader */
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    border-top: 1.6rem solid #3498db; /* Màu của phần trên của loader */
+    width: 12rem; /* Chiều rộng của loader */
+    height: 12rem; /* Chiều cao của loader */
+    animation: spin 2s linear infinite; /* Hiệu ứng xoay liên tục */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

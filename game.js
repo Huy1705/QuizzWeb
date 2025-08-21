@@ -6,6 +6,8 @@ console.log(choices);
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
+let game= document.getElementById('game');
+let loader = document.getElementById('loader');
 let questionCounter = 0;
 let availableQuestions = [];
 let questions=[
@@ -60,7 +62,7 @@ fetch("https://opentdb.com/api.php?amount=10")
                 return formattedQuestion;
             }
             )
-            console.log("API is working correctly");
+            console.log(game);
         } else {
             console.error("API is not working correctly");
         }
@@ -73,6 +75,8 @@ startGame = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+    game.style.display = 'flex';
+    loader.style.display = 'none';
 }
 getNewQuestion = () => {
     const questionCountText =questions.length;
